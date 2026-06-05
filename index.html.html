@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishesh Birthday Portal</title>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#ffe6f0;
+    color:#333;
+    text-align:center;
+}
+.screen{
+    display:none;
+    min-height:100vh;
+    padding:40px 20px;
+    box-sizing:border-box;
+}
+.active{display:block;}
+.card{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.1);
+}
+button{
+    margin:10px;
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+}
+.pink{background:#ff6fa8;color:white;}
+.gray{background:#ddd;}
+.flower{
+    margin:15px auto;
+    padding:15px;
+    background:#fff;
+    border-radius:15px;
+    max-width:650px;
+}
+.web{
+    position:fixed;
+    font-size:40px;
+    opacity:.25;
+}
+.tl{top:10px;left:10px;}
+.tr{top:10px;right:10px;}
+</style>
+</head>
+<body>
+
+<div class="web tl">🕸️</div>
+<div class="web tr">🕸️</div>
+
+<div id="s1" class="screen active">
+<div class="card">
+<h1>💖 Birthday Verification Portal 💖</h1>
+<p><b>Name:</b> Vishesh Shrivastava</p>
+<p><b>Age:</b> 107 days younger than Eiti 😌</p>
+<p><b>Occupation:</b> Being Eiti's Boyfriend</p>
+<p><b>Current Residence:</b> Eiti's Heart</p>
+<p><b>Relationship Status:</b> Deeply Loved</p>
+<p><b>Birthday Status:</b> 6 Days Remaining</p>
+
+<h3>Are you Vishesh Shrivastava?</h3>
+
+<button class="pink" onclick="next('s2')">It's Me</button>
+<button class="gray" onclick="alert('Access denied. This portal is reserved for one specific baby. ❤️')">Not Me</button>
+</div>
+</div>
+
+<div id="s2" class="screen">
+<div class="card">
+<h1>🎉 Identity Confirmed 🎉</h1>
+
+<p>Congratulations.</p>
+
+<p>💖 You are loved very much.</p>
+<p>💖 Your birthday is being celebrated aggressively.</p>
+<p>💖 Somebody misses you more than any website can properly explain.</p>
+<p>💖 You are currently Eiti's favorite person.</p>
+<p>💖 A birthday countdown has been arranged in your honor.</p>
+
+<button class="pink" onclick="next('s3')">Continue ❤️</button>
+</div>
+</div>
+
+<div id="s3" class="screen">
+<div class="card">
+<h1>🌸 6 Flowers You Have Earned 🌸</h1>
+
+<div class="flower">🌻 <b>Sunflower — Loyalty</b><br>Awarded for staying, even when things got difficult.</div>
+
+<div class="flower">🌷 <b>Tulip — Patience</b><br>Awarded for surviving long distance, misunderstandings, and one very dramatic girlfriend.</div>
+
+<div class="flower">🌹 <b>Rose — Love</b><br>Awarded for loving deeply and making someone feel loved in return.</div>
+
+<div class="flower">🌸 <b>Cherry Blossom — Growth</b><br>Awarded for how much you've grown over the years and for never stopping.</div>
+
+<div class="flower">🌺 <b>Hibiscus — Joy</b><br>Awarded for every laugh, every joke, and every moment you made life brighter.</div>
+
+<div class="flower">🤍 <b>Lily — Home</b><br>Awarded for making one person feel safe, calm, and at home no matter how far away you are.</div>
+
+<button class="pink" onclick="next('s4')">Claim Rewards 🎁</button>
+</div>
+</div>
+
+<div id="s4" class="screen">
+<div class="card">
+<h1>🏆 ACHIEVEMENT UNLOCKED</h1>
+<h2>🎂 Level 21: Birthday Boy</h2>
+
+<p><b>Rewards Successfully Claimed:</b></p>
+
+<p>💖 Unlimited Love</p>
+<p>🫂 Free Hugs (Redeem Anytime)</p>
+<p>😘 Unlimited Kisses</p>
+<p>📸 One Premium Girlfriend Content Voucher™</p>
+<p>👑 Permanent VIP Boyfriend Status</p>
+<p>🍕 Priority Access to Food Made by Eiti</p>
+<p>📞 Unlimited Late-Night Calls</p>
+<p>❤️ One Very Sweet Girlfriend</p>
+<p>🎁 Additional Birthday Privileges Available Upon Request</p>
+
+<h3>Anything you want, love. 💖</h3>
+</div>
+</div>
+
+<script>
+function next(id){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
