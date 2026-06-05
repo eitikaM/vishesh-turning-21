@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vishesh Birthday Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+body{
+margin:0;
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#ffd6e7,#fff0f7);
+overflow-x:hidden;
+text-align:center;
+}
+.screen{display:none;min-height:100vh;padding:30px 15px;box-sizing:border-box;}
+.active{display:block;}
+.card{
+max-width:750px;margin:auto;background:white;border-radius:25px;
+padding:25px;box-shadow:0 8px 30px rgba(0,0,0,.1);
+}
+h1,h2{font-family:Pacifico,cursive;color:#ff4f9a;}
+.btn{
+background:#ff77b7;color:white;border:none;border-radius:20px;
+padding:12px 22px;margin:8px;cursor:pointer;font-size:16px;
+}
+.webflash{
+position:fixed;inset:0;background:rgba(255,192,203,.85);
+display:none;align-items:center;justify-content:center;
+font-size:70px;z-index:999;
+}
+.flower-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+max-width:700px;
+margin:auto;
+}
+.flower{
+background:white;
+padding:15px;
+border-radius:20px;
+font-size:55px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+.flower.opened{background:#ffe1ee;}
+#popup{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.5);
+align-items:center;
+justify-content:center;
+}
+.popup-card{
+background:white;
+padding:25px;
+border-radius:20px;
+max-width:450px;
+margin:20px;
+}
+.reward{opacity:0;margin:8px;}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<div class="webflash" id="webflash">🕸️🩷🕸️</div>
+
+<div id="s1" class="screen active">
+<div class="card">
+<h1>Birthday Verification Portal</h1>
+<p><b>Name:</b> Vishesh Shrivastava</p>
+<p><b>Age:</b> 107 days younger than Eiti 😌</p>
+<p><b>Occupation:</b> Being Eiti's Boyfriend</p>
+<p><b>Current Residence:</b> Eiti's Heart</p>
+<p><b>Relationship Status:</b> Deeply Loved</p>
+<p><b>Birthday Status:</b> 6 Days Remaining</p>
+<h3>Are you Vishesh Shrivastava?</h3>
+<button class="btn" onclick="gotoScreen('s2')">It's Me</button>
+<button class="btn" onclick="alert('Access denied. Reserved for one specific baby ❤️')">Not Me</button>
+</div>
+</div>
+
+<div id="s2" class="screen">
+<div class="card">
+<h1>Identity Confirmed 🎉</h1>
+<p>💖 You are loved very much.</p>
+<p>💖 Your birthday is being celebrated aggressively.</p>
+<p>💖 Somebody misses you more than any website can properly explain.</p>
+<p>💖 You are currently Eiti's favorite person.</p>
+<p>💖 A birthday countdown has been arranged in your honor.</p>
+<button class="btn" onclick="gotoScreen('s3')">Continue ❤️</button>
+</div>
+</div>
+
+<div id="s3" class="screen">
+<div class="card">
+<h2>🌸 6 Flowers You Have Earned 🌸</h2>
+<p>Open all flowers to unlock your rewards.</p>
+
+<div class="flower-grid">
+<div class="flower" onclick="openFlower(this,'🌻 Sunflower','Loyalty','Awarded for staying, even when things got difficult.')">🌻</div>
+<div class="flower" onclick="openFlower(this,'🌷 Tulip','Patience','Awarded for surviving long distance, misunderstandings, and one very dramatic girlfriend.')">🌷</div>
+<div class="flower" onclick="openFlower(this,'🌹 Rose','Love','Awarded for loving deeply and making someone feel loved in return.')">🌹</div>
+<div class="flower" onclick="openFlower(this,'🌸 Cherry Blossom','Growth','Awarded for how much you have grown over the years.')">🌸</div>
+<div class="flower" onclick="openFlower(this,'🌺 Hibiscus','Joy','Awarded for every laugh and every happy memory.')">🌺</div>
+<div class="flower" onclick="openFlower(this,'🤍 Lily','Home','Awarded for making one person feel safe, calm and at home.')">🤍</div>
+</div>
+
+<br>
+<button id="rewardBtn" class="btn hidden" onclick="gotoScreen('s4')">Claim Rewards 🎁</button>
+</div>
+</div>
+
+<div id="s4" class="screen">
+<div class="card">
+<h1>🏆 Achievement Unlocked</h1>
+<h2>Level 21: Birthday Boy</h2>
+
+<div class="reward">💖 Unlimited Love</div>
+<div class="reward">🫂 Free Hugs (Redeem Anytime)</div>
+<div class="reward">😘 Unlimited Kisses</div>
+<div class="reward">📸 One Premium Girlfriend Content Voucher™</div>
+<div class="reward">👑 Permanent VIP Boyfriend Status</div>
+<div class="reward">🍕 Priority Access to Food Made by Eiti</div>
+<div class="reward">📞 Unlimited Late-Night Calls</div>
+<div class="reward">❤️ One Very Sweet Girlfriend</div>
+<div class="reward">🎁 Additional Birthday Privileges Available Upon Request</div>
+
+<br>
+<button class="btn" onclick="document.getElementById('final').style.display='block'">💌 One More Thing</button>
+
+<div id="final" style="display:none;">
+<p><b>Thank you for being my favorite person.</b></p>
+<p>I love you. ❤️</p>
+</div>
+</div>
+</div>
+
+<div id="popup">
+<div class="popup-card">
+<h2 id="ptitle"></h2>
+<h3 id="psub"></h3>
+<p id="ptext"></p>
+<button class="btn" onclick="closePopup()">Close</button>
+</div>
+</div>
+
+<script>
+let opened=0;
+
+function gotoScreen(id){
+document.getElementById('webflash').style.display='flex';
+setTimeout(()=>{
+document.getElementById('webflash').style.display='none';
+document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+if(id==='s4'){
+let rewards=document.querySelectorAll('.reward');
+rewards.forEach((r,i)=>{
+setTimeout(()=>{
+r.style.opacity='1';
+},i*500);
+});
+}
+},700);
+}
+
+function openFlower(el,title,sub,text){
+if(!el.classList.contains('opened')){
+el.classList.add('opened');
+opened++;
+if(opened===6){
+document.getElementById('rewardBtn').classList.remove('hidden');
+}
+}
+document.getElementById('ptitle').innerText=title;
+document.getElementById('psub').innerText=sub;
+document.getElementById('ptext').innerText=text;
+document.getElementById('popup').style.display='flex';
+}
+
+function closePopup(){
+document.getElementById('popup').style.display='none';
+}
+</script>
+
+</body>
+</html>
